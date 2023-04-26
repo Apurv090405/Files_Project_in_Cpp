@@ -1,0 +1,142 @@
+void DeleteFile()
+	{
+	    string Fn;
+        int num;
+        cout << "Enter the name of file : ";
+        cin >> Fn;
+        Fn = Fn + ".txt";
+        if (remove(Fn.c_str()) != 0) {
+            perror("Error deleting file");
+        }
+        else {
+            cout << endl <<"File deleted successfully";
+        }
+	}
+	void counts()
+	{
+	    string Fn;
+        int num;
+        cout << "Enter the name of file : ";
+        cin >> Fn;
+        Fn = Fn + ".txt";
+        cout << endl;
+        ifstream infile;
+        infile.open(Fn);
+        if(infile.fail())
+        {
+            cout << "Input file opening failed.\n";
+            exit(1);
+        }
+        int charCount = 0;
+        int numCount = 0;
+        int spaceCount = 0;
+        char ch;
+        while (infile >> noskipws >> ch) {
+            if (isalpha(ch)) {
+                charCount++;
+            }
+            else if (isdigit(ch)) {
+                numCount++;
+            }
+            else if (isspace(ch)) {
+                spaceCount++;
+            }
+        }
+        infile.close();
+        cout << "Number of characters: " << charCount << endl;
+        cout << "Number of numbers: " << numCount << endl;
+        cout << "Number of spaces: " << spaceCount << endl;
+	}
+    void PrintFileData()
+    {
+        string Fn;
+        int num;
+        cout << "Enter the name of file : ";
+        cin >> Fn;
+        Fn = Fn + ".txt";
+        ifstream infile;
+        infile.open(Fn);
+        if(infile.fail())
+        {
+            cout << "Input file opening failed.\n";
+            exit(1);
+        }
+        cout << endl << "Char Data Of File : " << endl;
+        int i = 0;
+        while(!infile.eof())
+        {
+            if(data[i]!="\n")
+            infile >> data[i];
+            //cout << "Line " << i+1 << " : ";
+            // write the data at the screen.
+
+            cout << data[i] << endl;
+            i++;
+        }
+        // close the opened file.
+        infile.close();
+    }
+    void SearchWord()
+    {
+        string name;
+        cout << "Enter the name of file : ";
+        cin >> name;
+        name = name + ".txt";
+        ifstream fin;
+        fin.open(name);
+        if(fin.fail())
+        {
+            cout << "Input file opening failed.\n";
+            exit(1);
+        }
+        string search;
+        cout << "Enter the word to Search in File : ";
+        cin  >> search;
+        bool isFound=0;
+        while(!fin.eof())
+        {
+            string temp = "";
+            getline(fin,temp);
+            for(int i=0;i<search.size();i++)
+            {
+                if(temp[i]==search[i])
+                    isFound = 1;
+                else
+                {
+                    isFound =0;
+                    break;
+                }
+            }
+            if(isFound)
+            {
+                cout << "Word " << search << " is Found : ";
+                for(int i = search.size()+1;i<temp.size();i++)
+                {
+                    cout << temp[i];
+                    break;
+                }
+            }
+        }
+        if(fin.eof()&&(!isFound))
+        {
+            cout << "Name not found!\n";
+        }
+        fin.close();
+    }
+	void ListOffile()
+	{
+        DIR *dr;
+        struct dirent *en;
+        dr = opendir("."); //open all directory
+        cout << "Lists of Files in Your code Folder : " << endl;
+        if (dr)
+        {
+            int i=1;
+            while ((en = readdir(dr)) != NULL)
+            {
+                cout << endl << i << ". : "<< en->d_name;
+                i++; //print all directory name
+            }
+            closedir(dr);//close all directory
+        }
+	}
