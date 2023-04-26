@@ -1,0 +1,89 @@
+void Newfile()
+    {
+        cout << "Enter the name of file : ";
+	    cin >> name;
+        cout << "Enter the number of lines you wish to enter in your file : ";
+	    cin >> number;
+	    name = name + ".txt";
+	    cout << endl;
+        openFile(name,number);
+    }
+    private :
+    void openFile(string fname,int numOfLines)
+    {
+        //fname = fname + ".txt";
+        // open a file in write mode.
+        ofstream outfile;
+        outfile.open(fname);
+        if(outfile.fail())
+        {
+            cout << "Input file opening failed.\n";
+            exit(1);
+        }
+        cout << "Writing to the file" << endl;
+        fflush(stdin);
+        for(int i=0;i<numOfLines;i++)
+        {
+            cout << "Enter line " << i+1 << " : ";
+            fflush(stdin);
+            scanf("%[^\n]%*c", data[i]);
+            //getline(cin,data[i]);
+            fflush(stdin);
+            // write inputted data into the file.
+            //outfile << data[i] << endl;
+        }
+        //outfile << endl << "Shorted numbers and string : " << endl;
+        sorting();
+        cout << "Shorted Data Of File : " << endl;
+        for(int i=0;i<numOfLines;i++)
+        {
+            // write inputted data into the file.
+            cout << data[i] << endl;
+            outfile << "\n" << data[i] ;
+        }
+        cout << endl << "End Of File...";
+        outfile.close();
+    }
+
+    public :
+    void sorting()
+    {
+        char temp[50];
+        for(int i = 0;i<number;i++)
+            {
+            for(int j=i+1;j<number;j++)
+            {
+                if(strcmp(data[i],data[j])>0)
+                {
+                    strcpy(temp,data[i]);
+                    strcpy(data[i],data[j]);
+                    strcpy(data[j],temp);
+                }
+            }
+        }
+        //for(int i = 0;i<number;i++)
+            //PrintFileData(fname,numOfLines);
+     }
+};
+class ProjectDetails
+{
+    public :
+    void details()
+    {
+        cout << endl << "-----------------------------[Team Members]---------------------------"<<endl;
+        cout << "22CS016 : Apurv Chudasama." << endl;
+        cout << "22CS048 : Jayraj jadeja." << endl;
+        cout << "22CS079 : Raj Shah." << endl;
+        cout << endl << "-----------------------------[Team Experience]------------------------"<< endl;
+        cout << "Raj and Jayraj are made the logic of shorting string and manage it on" << endl << "Files.Apurv made some console Design by using Windows Library. We can" << endl;
+        cout << "deside the logics and all. At last the One Main Project is made and " << endl;
+        cout << "after that in main code total 48 error are occur we can solve it in 2" << endl;
+        cout << "hours and finally we can give our best..." << endl;
+        cout << endl << "------------------------------[Refernces]-----------------------------"<<endl;
+        cout << "1. Microsoft Learn : Windows.h file" << endl;
+        cout << "2. E. Balaguruswami : file managment" << endl;
+        cout << "3. Greeks for greeks : colour code + windows.h examples" << endl;
+        cout << "4. Mentors : Doubts and some examples" << endl;
+        cout << "5. C++ Primer : references of file manegment";
+    }
+};
