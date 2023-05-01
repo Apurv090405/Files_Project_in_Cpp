@@ -397,7 +397,7 @@ void window()
     cout << "Created By 22CS016,22CS048,22CS079";
     SetColor(2);
     gotoxy(28,6);
-    cout << "Mentors : Abhishek Patel, Shrusti Gajjar, Vaibhavi patel";
+    cout << "Mentors : Abhishek Patel, Srushti Gajjar, Vaibhavi patel";
 }
 
 //fill details in window 2
