@@ -162,6 +162,8 @@ class Files
 	{
 	    //create DIR type pointer to search in directy...
         DIR *dr;
+	/*A dirent structure contains the character pointer d_name, 
+	which points to a string that gives the name of a file in the directory.*/
         struct dirent *en;
         dr = opendir("."); //open all directory
         cout << "Lists of Files in Your code Folder : " << endl;
