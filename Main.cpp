@@ -25,6 +25,10 @@ class Files
         cin >> Fn;
         Fn = Fn + ".txt";
         //to use remove we can delete the file and that function return 1 if file is delete...
+	/*The basic_string::c_str() is a built-in function in C++ which returns a pointer to an array that contains a null-terminated sequence of 
+        characters representing the current value of the basic_string object.
+        This array includes the same sequence of characters that make up the value of the 
+        basic_string object plus an additional terminating null-character at the end. */
         if (remove(Fn.c_str()) != 0) {
             perror("Error deleting file");
         }
