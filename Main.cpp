@@ -256,7 +256,7 @@ class ProjectDetails
     {
         cout << endl << "-----------------------------[Team Members]---------------------------"<<endl;
         cout << "22CS016 : Apurv Chudasama." << endl;
-        cout << "22CS048 : Jayraj jadeja." << endl;
+        cout << "22CS048 : Jayraj Parmar." << endl;
         cout << "22CS079 : Raj Shah." << endl;
         cout << endl << "-----------------------------[Team Experience]------------------------"<< endl;
         cout << "Raj and Jayraj are made the logic of shorting string and manage it on" << endl << "Files.Apurv made some console Design by using Windows Library. We can" << endl;
