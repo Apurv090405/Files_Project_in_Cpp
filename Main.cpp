@@ -58,6 +58,9 @@ class Files
         int spaceCount = 0;
         char ch;
         //using ctype.h libarary we can use the inbuilt function to count the numbers and char...
+	/*C++ manipulator noskipws() function is used to clear the skipws format flag for the str stream. 
+	When we set noskipws format flag, then it does not skip any number of whitespaces before the next input. 
+	Tab spaces, blank spaces and carriage returns are considered whitespaces.*/
         while (infile >> noskipws >> ch) {
             if (isalpha(ch)) {
                 charCount++;
