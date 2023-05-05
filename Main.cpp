@@ -412,7 +412,7 @@ void window()
 //fill details in window 2
 void main_window(Files &f1)
 {
-    int choice;
+    char choice;
     SetColor(20);
     int x = 0;
     gotoxy(71,8);
@@ -442,18 +442,21 @@ void main_window(Files &f1)
     cout << "Console Design by Apurv P Chudasama";
 
     //using infinity while loop the user can enter multiple choice...
-    while(1)
+    do
     {
+    	xy :
         gotoxy(72,26);
         cout << "Enter Choice : ";
         gotoxy(86,26);
         cin >> choice;
         gotoxy(x,8);
         clearWindow();
+	gotoxy(86,26);
+        cout << "                                    ";
         //using switchcase statment we can provide the choice as user input...
         switch(choice)
         {
-            case 1:
+            case '1':
                 SetColor(2);
                 gotoxy(15,9);
                 cout << "1. Adding and Shorting data in file" << endl;
@@ -461,7 +464,7 @@ void main_window(Files &f1)
                 gotoxy(x,11);
                 f1.Newfile();
                 break;
-            case 2:
+            case '2':
                 SetColor(2);
                 gotoxy(25,9);
                 cout << "2. Lists Of Files" << endl;
@@ -469,7 +472,7 @@ void main_window(Files &f1)
                 gotoxy(x,11);
                 ListOffile();
                 break;
-            case 3:
+            case '3':
                 SetColor(2);
                 gotoxy(22,9);
                 cout << "3. Print Data Of file" << endl;
@@ -477,7 +480,7 @@ void main_window(Files &f1)
                 gotoxy(x,11);
                 f1.PrintFileData();
                 break;
-            case 4:
+            case '4':
                 SetColor(2);
                 gotoxy(22,9);
                 cout << "4. Search Word in File" << endl;
@@ -485,7 +488,7 @@ void main_window(Files &f1)
                 gotoxy(x,11);
                 f1.SearchWord();
                 break;
-            case 5:
+            case '5':
                 SetColor(2);
                 gotoxy(15,9);
                 cout << "5. Count total Char & Digits in file" << endl;
@@ -493,7 +496,7 @@ void main_window(Files &f1)
                 gotoxy(x,11);
                 counts();
                 break;
-            case 6:
+            case '6':
                 SetColor(2);
                 gotoxy(20,9);
                 cout << "6. Delete exciting file" << endl;
@@ -501,7 +504,7 @@ void main_window(Files &f1)
                 gotoxy(x,11);
                 DeleteFile();
                 break;
-            case 7:
+            case '7':
                 SetColor(2);
                 gotoxy(20,9);
                 cout << "    -:Chember Of Coders :-   ";
@@ -510,17 +513,41 @@ void main_window(Files &f1)
                 details();
                 break;
             default:
-                SetColor(2);
-                gotoxy(x,30);
-                cout << "404! Error!" << endl << endl;
-                cout << "you Enter Wrong Choice so i can stop Program execution..." << endl;
-                int rating;
-                cout << "Enter your rating out of 5 : ";
-                cin >> rating;
-                cout << "Thank you for use the Program";
-                exit(1);
+                SetColor(500);
+                gotoxy(x,9);
+                cout << "You entered wrong choice" << endl;
+                cout << "I can manage it but you entered again" << endl << endl;
+                gotoxy(20,14);
+                cout << "        a$$$$$$$$$$a" << endl;
+                gotoxy(20,15);
+                cout << "      a$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,16);
+                cout << "    a$$$$$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,17);
+                cout << "   a$$$$$$$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,18);
+                cout << "  a$$$$$   $$$$$$   $$$$$a" << endl;
+                gotoxy(20,19);
+                cout << " a$$$$$     $$$$     $$$$$a" << endl;
+                gotoxy(20,20);
+                cout << " a$$$$$$$ $$$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,21);
+                cout << " a$$$$$$$ $$$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,22);
+                cout << " a$$$$$$$$$$$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,23);
+                cout << "  a$$$$$$          $$$$$$a" << endl;
+                gotoxy(20,24);
+                cout << "   a$$$$  $$$$$$$$  $$$$a" << endl;
+                gotoxy(20,25);
+                cout << "    a$$ $$$$$$$$$$$$ $$a" << endl;
+                gotoxy(20,26);
+                cout << "      a$$$$$$$$$$$$$$a" << endl;
+                gotoxy(20,27);
+                cout << "        a$$$$$$$$$$a" << endl;
+                goto xy;
         }
-    }
+    }while(1);
 }
 };
 
