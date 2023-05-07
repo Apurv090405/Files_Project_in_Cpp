@@ -432,6 +432,8 @@ void main_window(Files &f1)
     cout << "6. Delete exciting file" << endl;
     gotoxy(72,22);
     cout << "7. Project Details" << endl;
+    gotoxy(72,24);
+    cout << "8. Exit " << endl;
     gotoxy(71,27);
     SetColor(2);
     cout << "-------------------------------------------------";
@@ -512,11 +514,19 @@ void main_window(Files &f1)
                 gotoxy(x,10);
                 details();
                 break;
+	    case '8':
+                SetColor(2);
+                gotoxy(20,9);
+                cout << "Thanks For Using...." << endl;
+		gotoxy(20,11);
+                cout << "Byy \nHave a nice day...." << endl;
+		cout << "Jay Shree Krishna";
+                break;
             default:
                 SetColor(500);
                 gotoxy(x,9);
                 cout << "You entered wrong choice" << endl;
-                cout << "I can manage it but you entered again" << endl << endl;
+                cout << "My Master is as smart as you !!!" << endl << endl;
                 gotoxy(20,14);
                 cout << "        a$$$$$$$$$$a" << endl;
                 gotoxy(20,15);
