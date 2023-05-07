@@ -519,8 +519,10 @@ void main_window(Files &f1)
                 gotoxy(20,9);
                 cout << "Thanks For Using...." << endl;
 		gotoxy(20,11);
-                cout << "Byy \nHave a nice day...." << endl;
+                cout << "Byy, Have a nice day...." << endl;
+		gotoxy(20,13);
 		cout << "Jay Shree Krishna";
+		exit(1);
                 break;
             default:
                 SetColor(500);
